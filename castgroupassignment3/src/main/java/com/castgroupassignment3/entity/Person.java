@@ -16,12 +16,14 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
+ * Entidade responsável por armazenar os dados da pessoa
+ * 
  * @author Thiago Gitirana
  *
  */
 @Entity
-public class Person implements Serializable{
-	
+public class Person implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -30,7 +32,7 @@ public class Person implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "person_id")
-	private long id;
+	private Long id;
 
 	@JsonProperty("name")
 	private String name;
@@ -45,11 +47,11 @@ public class Person implements Serializable{
 	@JsonProperty("phones")
 	private List<Phone> phones;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

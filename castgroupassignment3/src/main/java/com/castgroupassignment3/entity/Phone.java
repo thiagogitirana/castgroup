@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
+ * Entidade rsponsável por armazenar os dados de telefone da pessoa
+ * 
  * @author Thiago Gitirana
  *
  */
@@ -21,21 +23,22 @@ public class Phone {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "phone_id")
-	private long id;
+	private Long id;
 
 	@JsonProperty("cellPhone")
-	private long cellPhone;
+	private Long cellPhone;
 
 	@JsonProperty("phone")
-	private long phone;
+	private Long phone;
 
 	@ManyToOne
 	@JoinColumn(name = "person_id")
 	@JsonBackReference
 	private Person person;
 
-	public Phone(long cellPhone, long phone, Person person) {
+	public Phone(Long id, Long cellPhone, Long phone, Person person) {
 		super();
+		this.id = id;
 		this.cellPhone = cellPhone;
 		this.phone = phone;
 		this.person = person;
@@ -45,27 +48,27 @@ public class Phone {
 		super();
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public long getCellPhone() {
+	public Long getCellPhone() {
 		return cellPhone;
 	}
 
-	public void setCellPhone(long cellPhone) {
+	public void setCellPhone(Long cellPhone) {
 		this.cellPhone = cellPhone;
 	}
 
-	public long getPhone() {
+	public Long getPhone() {
 		return phone;
 	}
 
-	public void setPhone(long phone) {
+	public void setPhone(Long phone) {
 		this.phone = phone;
 	}
 

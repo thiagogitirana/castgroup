@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
+ * Entidade responsável por armazenar o endereço da pessoa
  * 
  * @author Thiago Gitirana
  *
@@ -22,13 +23,13 @@ public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "address_id")
-	private long id;
+	private Long id;
 
 	@JsonProperty("street")
 	private String street;
 
 	@JsonProperty("number")
-	private int number;
+	private Integer number;
 
 	@JsonProperty("neighborhood")
 	private String neighborhood;
@@ -44,24 +45,27 @@ public class Address {
 	@JsonBackReference
 	private Person person;
 
-	public Address(String street, int number, String neighborhood, String city, String state) {
+	public Address(Long id, String street, Integer number, String neighborhood, String city, String state,
+			Person person) {
 		super();
+		this.id = id;
 		this.street = street;
 		this.number = number;
 		this.neighborhood = neighborhood;
 		this.city = city;
 		this.state = state;
+		this.person = person;
 	}
 
 	public Address() {
 		super();
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -73,11 +77,11 @@ public class Address {
 		this.street = street;
 	}
 
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 

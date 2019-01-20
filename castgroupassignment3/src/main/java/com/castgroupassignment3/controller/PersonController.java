@@ -16,6 +16,12 @@ import com.castgroupassignment3.entity.Person;
 import com.castgroupassignment3.exception.BusinessException;
 import com.castgroupassignment3.repository.PersonRepository;
 
+/**
+ * Controlador responsável por tratar as requisições rest
+ * 
+ * @author Thiago Gitirana
+ *
+ */
 @RestController
 @RequestMapping(path = "/rest")
 public class PersonController {
@@ -31,8 +37,13 @@ public class PersonController {
 	 */
 	@RequestMapping(path = "/pessoas")
 	public ResponseEntity<List<Person>> listAllPersons() throws BusinessException {
-		List<Person> persons = (List<Person>) personRepository.findAll();
-		return ResponseEntity.ok(persons);
+		try {
+			List<Person> persons = (List<Person>) personRepository.findAll();
+			return ResponseEntity.ok(persons);
+		} catch (Exception e) {
+			throw new BusinessException(e.getLocalizedMessage(), HttpStatus.BAD_REQUEST.value());
+		}
+
 	}
 
 	/**
@@ -44,8 +55,12 @@ public class PersonController {
 	 */
 	@RequestMapping(path = "/pessoa")
 	public ResponseEntity<Person> findPersonById(long id) throws BusinessException {
-		Optional<Person> person = personRepository.findById(id);
-		return ResponseEntity.ok(person.get());
+		try {
+			Optional<Person> person = personRepository.findById(id);
+			return ResponseEntity.ok(person.get());
+		} catch (Exception e) {
+			throw new BusinessException(e.getLocalizedMessage(), HttpStatus.BAD_REQUEST.value());
+		}
 	}
 
 	/**
@@ -57,8 +72,12 @@ public class PersonController {
 	 */
 	@RequestMapping(path = "/pessoa/save")
 	public ResponseEntity<String> savePerson(@RequestBody Person person) throws BusinessException {
-		personRepository.save(person);
-		return ResponseEntity.ok("Success");
+		try {
+			personRepository.save(person);
+			return ResponseEntity.ok("Success");
+		} catch (Exception e) {
+			throw new BusinessException(e.getLocalizedMessage(), HttpStatus.BAD_REQUEST.value());
+		}
 	}
 
 	/**
@@ -70,12 +89,16 @@ public class PersonController {
 	 */
 	@RequestMapping(path = "/pessoa/remove")
 	public ResponseEntity<String> deleteById(long id) throws BusinessException {
-		personRepository.deleteById(id);
-		return ResponseEntity.ok("Success");
+		try {
+			personRepository.deleteById(id);
+			return ResponseEntity.ok("Success");
+		} catch (Exception e) {
+			throw new BusinessException(e.getLocalizedMessage(), HttpStatus.BAD_REQUEST.value());
+		}
 	}
 
 	/**
-	 * Método responsável por tratar as exceções de negócio
+	 * Trata as exceções de negócio
 	 * 
 	 * @param business
 	 * @return ResponseEntity
