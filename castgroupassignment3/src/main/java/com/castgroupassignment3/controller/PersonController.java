@@ -34,9 +34,9 @@ public class PersonController {
 	private PersonRepository personRepository;
 
 	/**
-	 * Lista todas as pessoas
+	 * Lista todas as pessoas cadastradas
 	 * 
-	 * @return List<Person>
+	 * @return List<Person> Retorna todas as pessoas cadastradas
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/pessoas")
@@ -53,8 +53,8 @@ public class PersonController {
 	/**
 	 * Lista uma pessoa pelo id
 	 * 
-	 * @param id
-	 * @return Person
+	 * @param id Informar o código da pessoa cadastrada
+	 * @return Retorna a pessoa pelo id
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/pessoa")
@@ -70,8 +70,8 @@ public class PersonController {
 	/**
 	 * Insere uma pessoa na base
 	 * 
-	 * @param person
-	 * @return String
+	 * @param Dados da pessoa, nome, um endereço e uma lista de telefones
+	 * @return Sucesso caso tenha sido inserido a pessoa
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/pessoa/save")
@@ -88,8 +88,8 @@ public class PersonController {
 	/**
 	 * Deleta pessoas pelo id
 	 * 
-	 * @param id
-	 * @return String
+	 * @param id da pessoa a ser deletada
+	 * @return Sucesso caso a pessoa tenha sido deletada
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/pessoa/remove")
