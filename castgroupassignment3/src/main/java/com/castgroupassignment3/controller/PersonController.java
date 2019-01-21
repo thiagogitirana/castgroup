@@ -70,7 +70,7 @@ public class PersonController {
 	/**
 	 * Insere uma pessoa na base
 	 * 
-	 * @param Dados da pessoa, nome, um endereço e uma lista de telefones
+	 * @param person Dados da pessoa, nome, um endereço e uma lista de telefones
 	 * @return Sucesso caso tenha sido inserido a pessoa
 	 * @throws BusinessException
 	 */
