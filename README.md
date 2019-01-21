@@ -32,7 +32,7 @@ JDK 8
 
 Os serviços devem ser consumido via aplicação ou Api de teste como Postman ou SoapUi.
 
-castgroupassignment1.
+> castgroupassignment1:
 
 
 Salvar left: http://localhost:8080/v1/diff/1/left
@@ -54,7 +54,7 @@ Salvar right: http://localhost:8080/v1/diff/1/right
 Comparar dados: http://localhost:8080/v1/diff/1/avaluate
 
 
-castgroupassignment3.
+> castgroupassignment3:
 
 Salvar pessoa: http://localhost:8080/rest/pessoa/save
   
