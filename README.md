@@ -5,6 +5,11 @@
 
 Aplicação Restful que expõem três enpoints com a finalidade de comparar dados criptografados em base64.
 
+> castgroupassignment2.
+
+
+Aplicação java que calcula a diferença máxima em um array de inteiros.
+
 > castgroupassignment3.
 
 
@@ -27,10 +32,34 @@ JDK 8
 
 Os serviços devem ser consumido via aplicação ou Api de teste como Postman ou SoapUi.
 
-http://localhost:8080/rest/pessoa/save
+castgroupassignment1.
+
+
+Salvar left: http://localhost:8080/v1/diff/1/left
+```
+  {
+     "data": "dGVzdGU="     
+  }
+ 
+ ```
+
+Salvar right: http://localhost:8080/v1/diff/1/right
+```
+  {
+     "data": "dGVzdGU="     
+  }
+ 
+ ```
+
+Comparar dados: http://localhost:8080/v1/diff/1/avaluate
+
+
+castgroupassignment3.
+
+Salvar pessoa: http://localhost:8080/rest/pessoa/save
   
   ```
-  {
+    {
         "name": "Thiago Gitirana",
         "address": 
         {
@@ -53,6 +82,14 @@ http://localhost:8080/rest/pessoa/save
     }
 ```
 
+
+Listar pessoas: http://localhost:8080/rest/pessoas/
+
+
+Buscar pessoa pelo id: http://localhost:8080/rest/pessoa/?id=1
+
+
+Remover pessoa pelo id: http://localhost:8080/rest/pessoa/remove/?id=1
 
 
 ## Configuração para Desenvolvimento
