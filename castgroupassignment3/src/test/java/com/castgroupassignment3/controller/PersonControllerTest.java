@@ -104,7 +104,7 @@ public class PersonControllerTest {
 
 	@Test
 	public void testFindPersonById() throws BusinessException {
-		ResponseEntity<Person> retorno = controller.findPersonById(1);
+		ResponseEntity<Person> retorno = controller.findPersonById(1L);
 		Person persons = retorno.getBody();
 
 		assertEquals("João", persons.getName());
@@ -120,7 +120,7 @@ public class PersonControllerTest {
 
 	@Test
 	public void testDeleteById() throws BusinessException {
-		ResponseEntity<String> retorno = controller.deleteById(1);
+		ResponseEntity<String> retorno = controller.deleteById(1L);
 		assertEquals("Success", retorno.getBody());
 
 	}

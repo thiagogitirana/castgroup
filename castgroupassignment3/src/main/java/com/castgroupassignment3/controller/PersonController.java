@@ -44,8 +44,7 @@ public class PersonController {
 		try {
 			List<Person> persons = (List<Person>) personRepository.findAll();			
 			return ResponseEntity.ok(persons);
-		} catch (Exception e) {
-			LOGGER.error(e.getLocalizedMessage());
+		} catch (Exception e) {			
 			throw new BusinessException(e.getLocalizedMessage(), HttpStatus.BAD_REQUEST.value());
 		}
 
@@ -59,12 +58,11 @@ public class PersonController {
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/pessoa")
-	public ResponseEntity<Person> findPersonById(long id) throws BusinessException {
+	public ResponseEntity<Person> findPersonById(Long id) throws BusinessException {
 		try {
 			Optional<Person> person = personRepository.findById(id);
 			return ResponseEntity.ok(person.get());
 		} catch (Exception e) {
-			LOGGER.error(e.getLocalizedMessage());
 			throw new BusinessException(e.getLocalizedMessage(), HttpStatus.BAD_REQUEST.value());
 		}
 	}
@@ -82,8 +80,7 @@ public class PersonController {
 			personRepository.save(person);
 			LOGGER.info("Pessoa "+person.getName()+" salva com sucesso.");
 			return ResponseEntity.ok("Success");
-		} catch (Exception e) {
-			LOGGER.error(e.getLocalizedMessage());
+		} catch (Exception e) {			
 			throw new BusinessException(e.getLocalizedMessage(), HttpStatus.BAD_REQUEST.value());
 		}
 	}
@@ -96,13 +93,12 @@ public class PersonController {
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/pessoa/remove")
-	public ResponseEntity<String> deleteById(long id) throws BusinessException {
+	public ResponseEntity<String> deleteById(Long id) throws BusinessException {
 		try {
 			personRepository.deleteById(id);
 			LOGGER.info("Pessoa com id "+id+" deletada com sucesso.");
 			return ResponseEntity.ok("Success");
 		} catch (Exception e) {
-			LOGGER.error(e.getLocalizedMessage());
 			throw new BusinessException(e.getLocalizedMessage(), HttpStatus.BAD_REQUEST.value());
 		}
 	}
@@ -118,6 +114,7 @@ public class PersonController {
 		OutputError error = new OutputError();
 		error.setMessage(business.getMessage());
 		error.setErrorCode(business.getCode());
+		LOGGER.error(business.getMessage());
 		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
 }

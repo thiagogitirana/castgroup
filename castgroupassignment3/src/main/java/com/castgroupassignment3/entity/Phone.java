@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -23,6 +24,7 @@ public class Phone {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "phone_id")
+	@JsonIgnore
 	private Long id;
 
 	@JsonProperty("cellPhone")
