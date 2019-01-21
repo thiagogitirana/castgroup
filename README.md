@@ -1,30 +1,70 @@
-Assignment Java Cast Group
+# Assignment Java Cast Group
+> castgroupassignment1.
 
-Goal
-The goal of this assignment is to show your coding skills and what you value in software engineering. We belive that a good code is a well-tested code, feel free to improve/add/extend.
 
-The assignment
-•	Develop a backend with Spring Boot where there are 4 endpoint. 
-o	/rest/pessoas        (List all persons)
-o	/rest/pessoa/{id}  (Find a person by ID)
-o	/rest/pessoa/save/ (Save a Person). 
-o	/rest/pessoa/remove/{id}  (Delete a person by ID)
-•	Develop a frontend to consume theses services in Angular 1.
 
-•	A person has:
-o	Name
-o	ID
-o	Street
-o	Number
-o	Neighborhood
-o	City
-o	State
-o	Cellphone
-o	Phone
+Aplicação Restful que expõem três enpoints com a finalidade de comparar dados criptografados em base64.
 
-Must have
-•	Solution written in Java
-•	Internal logic shall be under unit test
-•	Functionality shall be under integration test
-•	Documentation in code
-•	Clear and a good read-me.
+> castgroupassignment3.
+
+
+
+Aplicação Restful que expõem enpoints com a finalidade de listar pessoas, encontrar pessoa pelo id, cadastrar pessoa e remover pessoa.
+
+![](../header.png)
+
+
+## Pré-Requisitos
+
+```sh
+Eclipse IDE
+Maven 3.6.0
+JDK 8
+```
+
+
+## Exemplo de uso
+
+Os serviços devem ser consumido via aplicação ou Api de teste como Postman ou SoapUi.
+
+http://localhost:8080/rest/pessoa/save
+  
+  ```
+  {
+        "name": "Thiago Gitirana",
+        "address": 
+        {
+        	"street": "Rua Teste",
+        	"number": 101,
+        	"neighborhood": "Teste",
+        	"city": "Recife",
+        	"state": "Pernambuco"
+        },
+        "phones": [
+            {
+                "cellPhone": 99559955,
+                "phone": 34466446
+            },
+            {
+                "cellPhone": 99885555,
+                "phone": 33225522
+            }
+        ]
+    }
+```
+
+
+
+## Configuração para Desenvolvimento
+
+```sh
+Maven Build
+Junit Test
+Run Spring Boot App
+```
+
+## Meta
+
+Thiago Gitirana
+
+[https://github.com/thiagogitirana/castgroup/](https://github.com/thiagogitirana/castgroup/)
