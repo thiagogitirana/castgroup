@@ -14,9 +14,9 @@ public interface DataService {
 	/**
 	 * Salva o objeto java na base
 	 * 
-	 * @param data
-	 * @param side
-	 * @return DataEntity
+	 * @param data Dado criptografado em base64
+	 * @param side Qual lado deve ser gravado
+	 * @return Objedo gravado na base
 	 * @throws BusinessException
 	 */
 	public DataEntity saveData(DataDTO data, DataSide side) throws BusinessException;
@@ -24,8 +24,9 @@ public interface DataService {
 	/**
 	 * Valida os valores left e right
 	 * 
-	 * @param id
-	 * @return String
+	 * @param id Identificador dos dados a serem comparados
+	 * @return True caso sejam iguais, o tamanho caso tenham tamanhos diferentes, e
+	 *         as diferenças caso tenham o mesmo tamanho e não sejam iguais
 	 * @throws BusinessException
 	 */
 	public String evaluateData(Long id) throws BusinessException;

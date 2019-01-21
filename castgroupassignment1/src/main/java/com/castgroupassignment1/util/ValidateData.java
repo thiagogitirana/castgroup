@@ -17,8 +17,9 @@ public class ValidateData {
 	/**
 	 * Valida se o valor é criptografado usando a base64
 	 * 
-	 * @param data
-	 * @return boolean
+	 * @param data Dado criptografado em base64
+	 * @return boolean true caso seja um dados valido, false caso seja nulo ou náo
+	 *         seja base64
 	 */
 	public static boolean validateDataBase64(String data) {
 
@@ -35,7 +36,7 @@ public class ValidateData {
 	/**
 	 * Valida os valores passados pelo serviço
 	 * 
-	 * @param data
+	 * @param data Objeto de requisição do serviço
 	 * @throws BusinessException Caso o objeto de entrada do serviço seja nulo, não
 	 *                           seja base64 ou não seja informado o id
 	 */
@@ -52,7 +53,7 @@ public class ValidateData {
 	/**
 	 * Valida os campos left e right
 	 * 
-	 * @param entity
+	 * @param entity Entidade gravada na base de dados
 	 * @throws BusinessException Caso os dados left e right sejam nulos
 	 */
 	public static void validateData(DataEntity entity) throws BusinessException {

@@ -33,9 +33,9 @@ public class DataController {
 	private DataService service;
 
 	/**
-	 * @param id
-	 * @param data
-	 * @return ResponseEntity
+	 * @param id Iformar o id do dado base64 a ser comparado
+	 * @param data Dado criptografado em base64
+	 * @return Sucesso caso seja inserido na base
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/left")
@@ -50,9 +50,9 @@ public class DataController {
 	}
 
 	/**
-	 * @param id
-	 * @param data
-	 * @return ResponseEntity
+	 * @param id Iformar o id do dado base64 a ser comparado
+	 * @param data Dado criptografado em base64
+	 * @return Sucesso caso seja inserido na base
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/right")
@@ -67,8 +67,9 @@ public class DataController {
 	}
 
 	/**
-	 * @param id
-	 * @return ResponseEntity
+	 * @param id Informar o id dos dados a serem comparados
+	 * @return True caso sejam iguais, o tamanho caso tenham tamanhos diferentes, e
+	 *         as diferenças caso tenham o mesmo tamanho e não sejam iguais
 	 * @throws BusinessException
 	 */
 	@RequestMapping(path = "/avaluate")

@@ -81,8 +81,8 @@ public class DataServiceImpl implements DataService {
 	}
 
 	/**
-	 * @param id
-	 * @return DataEntity
+	 * @param id Identificador dos dados inseridos 
+	 * @return DataEntity Dados gravados na base 
 	 * @throws BusinessException Caso não seja encontrado o id, ou o objeto
 	 *                           retornado não contenhas os dados left e right
 	 */
